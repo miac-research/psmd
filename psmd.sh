@@ -1,13 +1,13 @@
 #!/bin/bash
-# shellcheck disable=SC2166,SC2015
+# shellcheck disable=SC2166,SC2015,SC2071
 #
 # FOR MORE INFORMATION, PLEASE VISIT: http://www.psmd-marker.com
 #
-# PSMD processing pipeline, v 1.5 (2019)
+# PSMD processing pipeline, v 1.5.1 (2020-02)
 #
 # This script is provided under the revised BSD (3-clause) license
 #
-# Copyright (c) 2016, 2019, Institute for Stroke and Dementia Research, Munich
+# Copyright (c) 2016-2020 Institute for Stroke and Dementia Research, Munich
 # http://www.isd-muc.de  All rights reserved. 
 # 
 # Redistribution and use in source and binary forms, with or without
@@ -48,7 +48,7 @@
 
 usage(){
 echo ""
-echo "PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.5 (2019)"
+echo "PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.5.1 (2019)"
 echo "http://www.psmd-marker.com"
 echo ""
 echo "Usage:"
@@ -151,9 +151,6 @@ while getopts ":d:b:r:f:m:s:e:l:otcqvh" opt; do
     e)
       enhmask=true
       enhmasb=${OPTARG}
-      [ -z "$bval" ] && { echo ""; echo "ERROR: Enhanced masking only possible when using unprocessed data as input.";echo ""; exit 1; }
-      bcheck=$(grep "$enhmasb" "$bvalfile")
-      [ -z "$bcheck" ] && { echo ""; echo "ERROR: Specified b-value (for enhanced masking) not found"; echo ""; exit 1; }
       ;;
     l)
       lesionmasking=true
@@ -197,16 +194,30 @@ if [ -n "${dtiraw}" -o -n "${bval}" -o -n "${bvec}" ]; then
     pipeline=unprocessed
 	[ -z "${dtiraw}" -o -z "${bval}" -o -z "${bvec}" ] && { echo ""; echo "ERROR: When using raw DWI data, all options (-d -b -r) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }
 fi
+
 if [ -n "${faimage}" -o -n "${mdimage}" ]; then
     pipeline=processed
 	[ -z "${faimage}" -o -z "${mdimage}" ] && { echo ""; echo "ERROR: When using processed DTI data, both options (-f and -m) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }
 fi
+
 if [ ${enhmask} == true ] && [ ${pipeline} == processed ];then
 echo ""; echo "ERROR: Unprocessed DWI data needed for enhanced masking.";echo ""; exit 1
 fi
 
 # Check for skeleton_mask
 [ -z "$mask" ] && { echo ""; echo "ERROR: Skeleton_mask (option -s) not defined. This is mandatory! Type 'psmd.sh -h' for help";echo ""; exit 1; }
+
+# Checks for enhanced masking
+if [ ${enhmask} == true ];then
+
+	# Check b-value
+	bcheck=$(grep "$enhmasb" "$bvalfile")
+	[ -z "$bcheck" ] && { echo ""; echo "ERROR: Specified b-value (for enhanced masking) not found in ${bvalfile}"; echo ""; exit 1; }
+	
+	# Check for FSL 6
+	fslversion=$(cat "${FSLDIR}"/etc/fslversion)
+	[ "${fslversion}" \> 6 ] || { echo ""; echo "ERROR: FSL version 6.0 or newer required for enhanced masking. Your version is ${fslversion}."; echo ""; exit 1; }
+fi
 
 # Check for previous script run, which might interfere
 if [ -r psmdtemp ];then
@@ -215,7 +226,7 @@ if [ -r psmdtemp ];then
 fi
 
 # Set reporting level from options
-[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.5 (2019)"; } 
+[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.5.1 (2019)"; } 
 [ ${verbose} == true ] && { silent=false;echo "";echo "Reporting level: Verbose (all status and error messages are displayed)"; }
 
 redirect_cmd mkdir psmdtemp

@@ -1,7 +1,7 @@
-BSD 3-Clause License
+This script is provided under the revised BSD (3-clause) license
 
-Copyright (c) 2020, miac-research
-All rights reserved.
+Copyright (c) 2016, Institute for Stroke and Dementia Research, Munich, 
+Germany, http://www.isd-muc.de
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -27,3 +27,16 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The use of the software needs to be acknowledged through proper citations:
+
+For the PSMD pipeline:
+Baykara E, Gesierich B, Adam R, Tuladhar AM, Biesbroek JM, Koek HL, Ropele S, 
+Jouvent E, Alzheimer’s Disease Neuroimaging Initiative (ADNI), Chabriat H, 
+Ertl-Wagner B, Ewers M, Schmidt R, de Leeuw FE, Biessels GJ, Dichgans M, Duering M
+A novel imaging marker for small vessel disease based on skeletonization of 
+white matter tracts and diffusion histograms
+Annals of Neurology 2016, 80(4):581-92, DOI: 10.1002/ana.24758
+
+For FSL-TBSS:
+Follow the guidelines at http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/TBSS

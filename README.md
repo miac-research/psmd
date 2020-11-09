@@ -2,7 +2,7 @@
 
 PSMD is a robust, fully-automated and easy-to-implement marker for cerebral small vessel disease based on diffusion tensor imaging, white matter tract skeletonization (as implemented in FSL-TBSS) and histogram analysis.
 
-For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).
+**For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).**
 
 
 ## Contents
@@ -15,40 +15,18 @@ For more information on usage, including FAQ, please visit [www.psmd-marker.com]
 
 ## Version history
 
-### 1.6 (2020-11)
-
-- Ability to run on already pre-processed DWI data (option `-p`)
-- Option to output PSMD (or MSMD) separately for each hemisphere, comma-separated (left,right - option `-g`)
-
-### 1.5.1 (2020-02)
-
-- Fixed a bug related to the parsing of options
-- Added a check for FSL version 6
-
-### 1.5 (2019)
-
-- A refined skeleton mask (`skeleton_mask_2019.nii.gz`) to further improve the exclusion of areas prone to CSF contamination.
-- An additional, enhanced masking method (option `-e`). Intended to further improve the exclusion of problematic areas, i.e. areas with CSF contamination as well as hyperintense regions on DWI raw images (e.g. susceptibility artefacts and acute infarcts).  
-There are two drawbacks when using this option: It only works when using unprocessed data as input and processing time is longer (approx. doubled).
-- The possibility to include your own lesion mask to exclude brain areas from analysis, e.g. large haemorrhages. A mask in DTI space needs to be supplied by the user (option `-l mask`) .
-- The possibility to output median skeletonized mean diffusivity (**MSMD**) instead of PSMD (option `-o`). MSMD might provide more stable results in certain scenarios.
-- New naming scheme for temporary files for a better overview during troubleshooting.
-- Minor code improvements for better compatibility.
-
-### 1.0 (2016)
-
-- First release, used in the original PSMD paper.
-- [Download v1.0](https://bitbucket.org/miac-research/psmd/downloads/psmd_v1.0_2016.zip) (for legacy support).
+Starting with version 1.6, all development is done in this GitHub repository. 
+See the [GitHub releases page](https://github.com/miac-research/psmd/releases) for the latest and previous releases. 
 
 
 ## Roadmap of future development
 
-- In progress: Containerized version of PSMD using Singularity
+See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for current development topics.
 
 
 ## License
 
-Please see the `LICENSE` file provided in this repository.
+BSD 3-clause. Please see the `LICENSE` file provided in this repository.
 
 
 ## Support

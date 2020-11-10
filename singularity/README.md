@@ -4,7 +4,7 @@ Using containers can solve issues arising from dependencies and heterogeneous en
 
 Singularity is a well-established container solution, developed with scientific computing and deployment on HPC infrastructure (compute cluster) in mind.
 
-This singularity recipe installs FSL 6.0.3 and the current version of the PSMD script into a container using Ubuntu Bionic as the operating system.
+This singularity recipe installs FSL 6.0.3 and the latest version of the PSMD script into a container using Ubuntu Bionic as the operating system.
 
 > If you want to build the container with a specific version of PSMD, please see the detailed instructions below!
 
@@ -30,7 +30,7 @@ sudo singularity build psmd.sif singularity-psmd.txt
 
 ### Using a specific version of PSMD in the container
 
-By default, the container will use the latest version of the psmd script from the repository. If you want to run a specific version, substitute the URL for the wget download with one of the follwoing:
+By default, the container will use the latest version of the psmd script from the repository. To run a specific version, you need to edit the recipe file. Find the following line: `wget -O /psmd/psmd.sh https://raw.githubusercontent.com/miac-research/psmd/main/psmd.sh` and substitute the URL with one of the following URLs:
 
 | version | URL |
 | ---     | --- |

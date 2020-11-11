@@ -1,6 +1,6 @@
 # PSMD Singularity Conatainer BETA
 
-**The container version is still in Beta. Please report any bugs on the [issues page](https://github.com/miac-research/psmd/issues).
+**The container version is still in Beta. Please report any bugs on the [issues page](https://github.com/miac-research/psmd/issues).**
 
 Using containers can solve problems arising from dependencies and heterogeneous environments.
 
@@ -38,7 +38,7 @@ By default, the container will use the latest version of the psmd script from th
 | ---     | --- |
 | 1.0     | https://raw.githubusercontent.com/miac-research/psmd/8f6b1495a65972111ec099b7f304d9f3954bd983/psmd.sh | 
 | 1.5.1   | https://raw.githubusercontent.com/miac-research/psmd/d0de74fe0b190d04588b934981c7464334f83b9f/psmd.sh |
-| 1.7     | tbd |
+| 1.7     | https://raw.githubusercontent.com/miac-research/psmd/3c427f466f39bda0cc934d16224fed94c512562a/psmd.sh |
 
 
 ### Run the container

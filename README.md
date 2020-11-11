@@ -4,8 +4,13 @@ PSMD is a robust, fully-automated and easy-to-implement marker for cerebral smal
 
 **For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).**
 
+## Usage
 
-## Contents
+We recommend downloading one of our [releases](https://github.com/miac-research/psmd/releases) (for a new project, take the latest release). It is best practice to stick with one release in a given project. For even better replicability and traceability, consider using the [container version](https://github.com/miac-research/psmd/tree/main/singularity) of PSMD.
+
+For more information, please see the project website at [www.psmd-marker.com](https://www.psmd-marker.com).
+
+## Contents of download packages
 
 * `psmd.sh` - Main analysis script
 * `skeleton_mask_2019.nii.gz` - Updated (2019) skeleton mask image
@@ -21,12 +26,14 @@ See the [GitHub releases page](https://github.com/miac-research/psmd/releases) f
 
 ## Roadmap of future development
 
-See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for current development topics.
+See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for current development topics. If you found a bug or have suggestions for new features, please feel free to open an issue.
 
 
 ## License
 
-BSD 3-clause. Please see the `LICENSE` file provided in this repository.
+The script itself is published under the BSD 3-clause license. Please see the `LICENSE` file provided in this repository.
+
+An [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
 
 
 ## Support

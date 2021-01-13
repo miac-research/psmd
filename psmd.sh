@@ -162,7 +162,7 @@ while getopts ":d:p:b:r:f:m:s:e:l:ogtcqvh" opt; do
       ;;
     p)
       ppdwi=${OPTARG}
-      if [ -r "$ppdwi" ]; then thenpdwifile=$(get_abs_filename "$ppdwi"); else { echo ""; echo "ERROR: Pre-processed DWI data file not found";echo ""; exit 1; }; fi
+      if [ -r "$ppdwi" ]; then ppdwifile=$(get_abs_filename "$ppdwi"); else { echo ""; echo "ERROR: Pre-processed DWI data file not found";echo ""; exit 1; }; fi
       ;;
 	b)
       bval=${OPTARG}

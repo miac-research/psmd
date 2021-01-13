@@ -18,7 +18,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of the “Institute for Stroke and Dementia Reseearch”
+#     * Neither the name of the “Institute for Stroke and Dementia Research”
 #       nor the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -158,31 +158,31 @@ while getopts ":d:p:b:r:f:m:s:e:l:ogtcqvh" opt; do
   case $opt in
     d)
       rawdwi=${OPTARG}
-      [ -r "$rawdwi" ] && rawdwifile=$(get_abs_filename "$rawdwi") || { echo ""; echo "ERROR: Unprocessed DWI data file not found";echo ""; exit 1; }
+      if [ -r "$rawdwi" ]; then rawdwifile=$(get_abs_filename "$rawdwi"); else { echo ""; echo "ERROR: Unprocessed DWI data file not found";echo ""; exit 1; }; fi
       ;;
     p)
       ppdwi=${OPTARG}
-      [ -r "$ppdwi" ] && ppdwifile=$(get_abs_filename "$ppdwi") || { echo ""; echo "ERROR: Pre-processed DWI data file not found";echo ""; exit 1; }
+      if [ -r "$ppdwi" ]; then thenpdwifile=$(get_abs_filename "$ppdwi"); else { echo ""; echo "ERROR: Pre-processed DWI data file not found";echo ""; exit 1; }; fi
       ;;
 	b)
       bval=${OPTARG}
-      [ -r "$bval" ] && bvalfile=$(get_abs_filename "$bval") || { echo ""; echo "ERROR: Bval file not found";echo ""; exit 1; }
+      if [ -r "$bval" ]; then bvalfile=$(get_abs_filename "$bval"); else { echo ""; echo "ERROR: Bval file not found";echo ""; exit 1; }; fi
       ;;
     r)
       bvec=${OPTARG}
-      [ -r "$bvec" ] && bvecfile=$(get_abs_filename "$bvec") || { echo ""; echo "ERROR: Bvec file not found";echo ""; exit 1; }
+      if [ -r "$bvec" ]; then bvecfile=$(get_abs_filename "$bvec"); else { echo ""; echo "ERROR: Bvec file not found";echo ""; exit 1; }; fi
       ;;
     f)
       faimage=${OPTARG}
-      [ -r "$faimage" ] && faimagefile=$(get_abs_filename "$faimage") || { echo ""; echo "ERROR: FA image file not found";echo ""; exit 1; }
+      if [ -r "$faimage" ]; then faimagefile=$(get_abs_filename "$faimage"); else { echo ""; echo "ERROR: FA image file not found";echo ""; exit 1; }; fi
       ;;
     m)
       mdimage=${OPTARG}
-      [ -r "$mdimage" ] && mdimagefile=$(get_abs_filename "$mdimage") || { echo ""; echo "ERROR: MD image file not found";echo ""; exit 1; }
+      if [ -r "$mdimage" ]; then mdimagefile=$(get_abs_filename "$mdimage"); else { echo ""; echo "ERROR: MD image file not found";echo ""; exit 1; }; fi
       ;;
     s)
       mask=${OPTARG}
-      [ -r "$mask" ] && maskfile=$(get_abs_filename "$mask") || { echo ""; echo "ERROR: Skeleton_mask file not found";echo ""; exit 1; }
+      if [ -r "$mask" ]; then maskfile=$(get_abs_filename "$mask"); else { echo ""; echo "ERROR: Skeleton_mask file not found";echo ""; exit 1; }; fi
       ;;
     e)
       enhmask=true
@@ -191,7 +191,7 @@ while getopts ":d:p:b:r:f:m:s:e:l:ogtcqvh" opt; do
     l)
       lesionmasking=true
       lesionmask=${OPTARG}
-      [ -r "$lesionmask" ] && lesionmaskfile=$(get_abs_filename "$lesionmask") || { echo ""; echo "ERROR: Lesion_mask file not found";echo ""; exit 1; }
+      if [ -r "$lesionmask" ]; then lesionmaskfile=$(get_abs_filename "$lesionmask"); else { echo ""; echo "ERROR: Lesion_mask file not found";echo ""; exit 1; }; fi
       ;;
     o)
       metric=MSMD
@@ -231,22 +231,22 @@ done
 # Check option combinations
 if [ -n "${rawdwi}" ]; then
   pipeline=unprocessed
-  [ -z "${rawdwi}" -o -z "${bval}" -o -z "${bvec}" ] && { echo ""; echo "ERROR: When using raw DWI data, all options (-d -b -r) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }
+  if [ -z "${rawdwi}" ] || [ -z "${bval}" ] || [ -z "${bvec}" ]; then { echo ""; echo "ERROR: When using raw DWI data, all options (-d -b -r) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }; fi
 fi
 
 if [ -n "${ppdwi}" ]; then
   pipeline=preprocessed
-  [ -z "${ppdwi}" -o -z "${bval}" -o -z "${bvec}" ] && { echo ""; echo "ERROR: When using pre-processed DWI data, all options (-p -b -r) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }
+  if [ -z "${ppdwi}" ] || [ -z "${bval}" ] || [ -z "${bvec}" ]; then { echo ""; echo "ERROR: When using pre-processed DWI data, all options (-p -b -r) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }; fi
 fi
 
-if [ -n "${faimage}" -o -n "${mdimage}" ]; then
+if [ -n "${faimage}" ] || [ -n "${mdimage}" ]; then
   pipeline=processed
-  [ -z "${faimage}" -o -z "${mdimage}" ] && { echo ""; echo "ERROR: When using processed DTI data, both options (-f and -m) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }
+  if [ -z "${faimage}" ] || [ -z "${mdimage}" ]; then { echo ""; echo "ERROR: When using processed DTI data, both options (-f and -m) are required. Type 'psmd.sh -h' for help.";echo ""; exit 1; }; fi
 fi
 
 [ -z "$pipeline" ] && { echo ""; echo "ERROR: Not enough arguments provided! Type 'psmd.sh -h' for help";echo ""; exit 1; }
 
-if [ "${enhmask}" == "true" -a "${pipeline}" == "processed" ];then
+if [ "${enhmask}" == "true" ] && [ "${pipeline}" == "processed" ];then
 	echo ""; echo "ERROR: Unprocessed or pre-processed (not fully processed) DWI data needed for enhanced masking.";echo ""; exit 1
 fi
 
@@ -262,6 +262,7 @@ if [ ${enhmask} == true ];then
 	
   # Check for FSL 6
   fslversion=$(cat "${FSLDIR}"/etc/fslversion)
+  # shellcheck disable=SC2071
   [ "${fslversion}" \> 6 ] || { echo ""; echo "ERROR: FSL version 6.0 or newer required for enhanced masking. Your version is ${fslversion}."; echo ""; exit 1; }
 fi
 
@@ -286,7 +287,7 @@ if [ ${pipeline} == unprocessed ];then
   ppdwifile=$(get_abs_filename data.nii.gz)
 fi
 
-if [ ${pipeline} == unprocessed -o ${pipeline} == preprocessed ];then
+if [ ${pipeline} == unprocessed ] || [ ${pipeline} == preprocessed ];then
   [ ${silent} == false ] && echo "...Running brain extraction on b=0"
   redirect_cmd select_dwi_vols "${ppdwifile}" "${bvalfile}" nodiff 0 -m
   redirect_cmd bet nodiff nodiff_brain_F -F -m
@@ -319,7 +320,7 @@ redirect_cmd cd tbss
 tbssfile=$(ls)
 
 # TBSS on FA
-[ ${pipeline} == processed -a ${silent} == false ] && echo "Calculating ${metric} from already processed DTI"
+[ ${pipeline} == processed ] && [ ${silent} == false ] && echo "Calculating ${metric} from already processed DTI"
 [ ${silent} == false ] && echo "...Skeletonizing FA image (this step will take a few minutes)"
 redirect_cmd tbss_1_preproc "${tbssfile}"
 redirect_cmd tbss_2_reg -T
@@ -369,14 +370,14 @@ redirect_cmd fslmaths stats/all_MD_skeletonised.nii.gz -mas "${finalmask}" -mul 
 
 
 # Whole brain metrics
-if [ ${hemispheres} == false -a ${metric} == PSMD ];then
+if [ ${hemispheres} == false ] && [ ${metric} == PSMD ];then
   mdskel=MD_skeletonized_masked.nii.gz
   psmdcalc
   [ ${silent} == false ] && { echo ""; echo "${metric} is ${psmdresult}"; echo ""; }
   [ ${silent} == true ] && echo "${psmdresult}"
 fi
 
-if [ ${hemispheres} == false -a ${metric} == MSMD ];then
+if [ ${hemispheres} == false ] && [ ${metric} == MSMD ];then
   mdskel=MD_skeletonized_masked.nii.gz
   msmdcalc
   [ ${silent} == false ] && { echo ""; echo "${metric} is ${msmdresult}"; echo ""; }
@@ -384,12 +385,12 @@ if [ ${hemispheres} == false -a ${metric} == MSMD ];then
 fi
 
 # Left and right hemisphere metrics (new in version 1.6)
-if [ ${hemispheres} == true -a ${metric} == PSMD ];then
+if [ ${hemispheres} == true ] && [ ${metric} == PSMD ];then
   fslmaths MD_skeletonized_masked.nii.gz -roi  0 90 0 -1 0 -1 0 -1 MD_skeletonized_masked_R.nii.gz
   fslmaths MD_skeletonized_masked.nii.gz -roi 91 90 0 -1 0 -1 0 -1 MD_skeletonized_masked_L.nii.gz
 fi
 
-if [ ${hemispheres} == true -a ${metric} == PSMD ];then
+if [ ${hemispheres} == true ] && [ ${metric} == PSMD ];then
   mdskel=MD_skeletonized_masked_L.nii.gz
   psmdcalc
   psmdL="${psmdresult}"
@@ -399,7 +400,7 @@ if [ ${hemispheres} == true -a ${metric} == PSMD ];then
   [ ${silent} == false ] && { echo ""; echo "${metric} is (left,right) ${psmdL},${psmdR}"; echo ""; }
   [ ${silent} == true ] && echo "${psmdL},${psmdR}"
 fi
-if [ ${hemispheres} == true -a ${metric} == MSMD ];then
+if [ ${hemispheres} == true ] && [ ${metric} == MSMD ];then
   mdskel=MD_skeletonized_masked_L.nii.gz
   msmdcalc
   msmdL="${psmdresult}"

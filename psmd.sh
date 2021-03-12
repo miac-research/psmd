@@ -57,6 +57,9 @@ cat <<USAGE
 PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.8 (2021-03)
 http://www.psmd-marker.com
 
+Disclaimer:
+PSMD is not a medical device and for research use only!
+
 Usage:
 
   From unprocessed DWI data:

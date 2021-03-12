@@ -13,6 +13,7 @@ From: ubuntu:bionic-20200921
 %help
 Visit the PSMD repository https://github.com/miac-research/psmd
 or the PSMD homepage https://www.psmd-marker.com for help.
+This container is not a medical device and for research use only!
 
 %labels
     Author Marco Duering

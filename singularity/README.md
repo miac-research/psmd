@@ -10,6 +10,10 @@ This singularity recipe installs FSL 6.0.3 and the latest version of the PSMD sc
 
 > If you want to build the container with a specific version of PSMD, please see the detailed instructions below!
 
+## IMPORTANT DISCLAIMER  
+
+PSMD is NOT a medical device and therefore **for research use only**. Do not use PSMD for diagnosis, prognosis, monitoring or any other clinical routine use. Any application in clinical routine is forbidden by law, e.g. by Medical Device Regulation article 5 in the EU.
+
 ## Instructions
 
 ### Prerequisites

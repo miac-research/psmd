@@ -4,6 +4,10 @@ PSMD is a robust, fully-automated and easy-to-implement marker for cerebral smal
 
 **For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).**
 
+## IMPORTANT DISCLAIMER  
+
+PSMD is NOT a medical device and therefore **for research use only**. Do not use PSMD for diagnosis, prognosis, monitoring or any other clinical routine use. Any application in clinical routine is forbidden by law, e.g. by Medical Device Regulation article 5 in the EU.
+
 ## Usage
 
 We recommend downloading one of our [releases](https://github.com/miac-research/psmd/releases) (for a new project, take the latest release). It is best practice to stick with one release in a given project. For even better replicability and traceability, consider using the [container version](https://github.com/miac-research/psmd/tree/main/singularity) of PSMD.

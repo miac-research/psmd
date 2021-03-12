@@ -7,6 +7,9 @@
 # Executing this container requires a valid license of FSL.
 # Please see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence
 
+# This container is not a medical device and for research use only!
+
+
 Bootstrap: docker
 From: ubuntu:bionic-20200921
 

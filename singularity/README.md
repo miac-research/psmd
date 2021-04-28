@@ -43,7 +43,7 @@ By default, the container will use the latest version of the psmd script from th
 | 1.0     | https://raw.githubusercontent.com/miac-research/psmd/v1.0/psmd.sh | 
 | 1.5.1   | https://raw.githubusercontent.com/miac-research/psmd/v1.5.1/psmd.sh |
 | 1.7     | https://raw.githubusercontent.com/miac-research/psmd/v1.7/psmd.sh |
-| 1.8.1   | https://raw.githubusercontent.com/miac-research/psmd/v1.8.1/psmd.sh |
+| 1.8.2   | https://raw.githubusercontent.com/miac-research/psmd/v1.8.2/psmd.sh |
 
 
 ### Run the container

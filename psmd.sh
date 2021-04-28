@@ -2,7 +2,7 @@
 #
 # FOR MORE INFORMATION, PLEASE VISIT: http://www.psmd-marker.com
 #
-# PSMD processing pipeline, v1.8 (2021-03)
+# PSMD processing pipeline, v1.8.2 (2021-04)
 #
 # IMPORTANT: This tool is NOT a medical device and for research use only!
 # Do NOT use this tool for diagnosis, prognosis, monitoring or any other
@@ -54,7 +54,7 @@
 usage(){
 cat <<USAGE
 
-PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.8 (2021-03)
+PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.8.2 (2021-04)
 http://www.psmd-marker.com
 
 Disclaimer:
@@ -280,7 +280,7 @@ if [ -r psmdtemp ];then
 fi
 
 # Set reporting level from options
-[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.8"; } 
+[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.8.2"; } 
 [ ${verbose} == true ] && { silent=false;echo "";echo "Reporting level: Verbose (all status and error messages are displayed)"; }
 
 redirect_cmd mkdir psmdtemp
@@ -420,6 +420,5 @@ fi
 
 cd "${basedir}" || exit 1
 [ ${debug} == false ] && rm -r psmdtemp
-[ ${silent} == true ] && echo "THIS IS A PRE-RELEASE VERSION. ONLY FOR EVALUATION USE!";echo "" ###DEBUG
 
 exit 0

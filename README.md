@@ -4,22 +4,28 @@ PSMD is a robust, fully-automated and easy-to-implement marker for cerebral smal
 
 **For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).**
 
+
 ## IMPORTANT DISCLAIMER  
 
 PSMD is NOT a medical device and therefore **for research use only**. Do not use PSMD for diagnosis, prognosis, monitoring or any other clinical routine use. Any application in clinical routine is forbidden by law, e.g. by Medical Device Regulation article 5 in the EU.
 
+
 ## Usage
 
-We recommend downloading one of our [releases](https://github.com/miac-research/psmd/releases) (for a new project, take the latest release). It is best practice to stick with one release in a given project. For even better replicability and traceability, consider using the [container version](https://github.com/miac-research/psmd/tree/main/singularity) of PSMD.
+Download one of our [releases](https://github.com/miac-research/psmd/releases). For a new project, take the latest release. It is best practice to stick with one release version throughout a project.  
 
-For more information, please see the project website at [www.psmd-marker.com](https://www.psmd-marker.com).
+For even better replicability and traceability, we strongly recommend using a container for the software dependencies, e.g. the **[PSMD container recipe](https://github.com/miac-research/psmd/tree/main/container)** for Apptainer/Singularity.
+
+For more information, please see the project website at [www.psmd-marker.com](https://www.psmd-marker.com) or type `./psmd.sh -h` at the command line.
+
 
 ## Contents of download packages
 
-* `psmd.sh` - Main analysis script
+* `psmd.sh` - PSMD script
 * `skeleton_mask_2019.nii.gz` - Updated (2019) skeleton mask image
-* `LICENSE` - Please have a look at the license file
+* `LICENSE` - Please take a minute to read the license file
 * Folder `examples` - Sample dataset for testing
+* Folder `container` - Apptainer/Singularity container recipe
 
 
 ## Version history

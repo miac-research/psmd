@@ -2,7 +2,7 @@
 #
 # FOR MORE INFORMATION, PLEASE VISIT: http://www.psmd-marker.com
 #
-# PSMD processing pipeline, v1.8.2 (2021-04)
+# PSMD processing pipeline, v1.8.3 (2021-04)
 #
 # IMPORTANT: This tool is NOT a medical device and for research use only!
 # Do NOT use this tool for diagnosis, prognosis, monitoring or any other
@@ -54,7 +54,7 @@
 usage(){
 cat <<USAGE
 
-PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.8.2 (2021-04)
+PSMD - Peak width of Skeletonized Mean Diffusivity - pipeline version 1.8.3 (2022-05)
 http://www.psmd-marker.com
 
 Disclaimer:
@@ -171,7 +171,7 @@ while getopts ":d:p:b:r:f:m:s:e:l:ogtcqvh" opt; do
       ppdwi=${OPTARG}
       if [ -r "$ppdwi" ]; then ppdwifile=$(get_abs_filename "$ppdwi"); else { echo ""; echo "ERROR: Pre-processed DWI data file not found";echo ""; exit 1; }; fi
       ;;
-	b)
+	  b)
       bval=${OPTARG}
       if [ -r "$bval" ]; then bvalfile=$(get_abs_filename "$bval"); else { echo ""; echo "ERROR: Bval file not found";echo ""; exit 1; }; fi
       ;;
@@ -280,7 +280,7 @@ if [ -r psmdtemp ];then
 fi
 
 # Set reporting level from options
-[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.8.2"; } 
+[ ${silent} == false ] && { echo "";echo "${metric} processing pipeline, v1.8.3"; } 
 [ ${verbose} == true ] && { silent=false;echo "";echo "Reporting level: Verbose (all status and error messages are displayed)"; }
 
 redirect_cmd mkdir psmdtemp

@@ -52,4 +52,4 @@ The PSMD project was initiated at the Institue for Stroke and Dementia Research 
 
 The ongoing development of PSMD is supported by Medical Image Analysis Center (MIAC), Basel, Switzerland.
 
-<img alt="MIAC logo" src="https://miac.swiss/gallery/normal/116/miaclogo@2x.png" width="400" href="http://miac.swiss">
+<img alt="MIAC logo" src="https://home.miac.swiss/gallery/normal/116/miaclogo@2x.png" width="400" href="http://miac.swiss">

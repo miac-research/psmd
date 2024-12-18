@@ -51,5 +51,3 @@ An [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to 
 The PSMD project was initiated at the Institue for Stroke and Dementia Research (ISD), Munich, Germany, with funding support by the LMU FöFoLe program (grant 808), the Else Kröner-Fresenius-Stiftung (EKFS, grant 2014_A200), and the Vascular Dementia Research Foundation.
 
 The ongoing development of PSMD is supported by Medical Image Analysis Center (MIAC), Basel, Switzerland.
-
-<img alt="MIAC logo" src="https://home.miac.swiss/gallery/normal/116/miaclogo@2x.png" width="400" href="http://miac.swiss">

@@ -2,7 +2,8 @@
 
 PSMD is a robust, fully-automated and easy-to-implement marker for cerebral small vessel disease based on diffusion tensor imaging, white matter tract skeletonization (as implemented in FSL-TBSS) and histogram analysis.
 
-**For more information on usage, including FAQ, please visit [www.psmd-marker.com](https://www.psmd-marker.com).**
+**For more information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).**
+
 
 
 ## IMPORTANT DISCLAIMER  
@@ -16,7 +17,7 @@ Download one of our [releases](https://github.com/miac-research/psmd/releases). 
 
 For even better replicability and traceability, we strongly recommend using a container for the software dependencies, e.g. the **[PSMD container recipe](https://github.com/miac-research/psmd/tree/main/container)** for Apptainer/Singularity.
 
-For more information, please see the project website at [www.psmd-marker.com](https://www.psmd-marker.com) or type `./psmd.sh -h` at the command line.
+For more information, please see the [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/) or type `./psmd.sh -h` at the command line.
 
 
 ## Contents of download packages

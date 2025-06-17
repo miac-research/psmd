@@ -35,7 +35,7 @@ RUN wget --progress=dot:giga --no-check-certificate \
  && rm /opt/miniconda.sh \
  && conda clean -afy
 
-# Conda install fsl-tbss & dipy
+# Conda install fsl-tbss
 # Bump pillow and setuptools to mitigate CVEs
 RUN conda install -y \
     -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ \

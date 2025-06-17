@@ -9,7 +9,7 @@ PSMD is a robust, fully-automated and easy-to-implement marker for cerebral smal
 
 **For detailed information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).**
 
-As of version 1.9.0, the preferred way of using PSMD is a [pre-built container image](https://github.com/orgs/miac-research/packages?repo_name=psmd), which can be used with Docker, Apptainer, and compatible container platforms. The usage is simple:
+As of version 1.9.0, the preferred way of using PSMD is a [pre-built container image](https://github.com/miac-research/psmd/pkgs/container/psmd), which can be used with Docker, Apptainer, and compatible container platforms. The usage is simple:
 
 **Using Apptainer:**
 
@@ -41,7 +41,7 @@ For a new project, take the latest release. It is best practice to **stick with 
 ## Version history
 
 Starting with version 1.6, all development is done in this GitHub repository. 
-See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/orgs/miac-research/packages?repo_name=psmd) for available pre-built container images.
+See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/miac-research/psmd/pkgs/container/psmd) for available pre-built container images.
 
 ## Roadmap of future development
 

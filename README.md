@@ -2,53 +2,59 @@
 
 PSMD is a robust, fully-automated and easy-to-implement marker for cerebral small vessel disease based on diffusion tensor imaging, white matter tract skeletonization (as implemented in FSL-TBSS) and histogram analysis.
 
-**For more information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).**
-
-
-
-## IMPORTANT DISCLAIMER  
-
-PSMD is NOT a medical device and therefore **for research use only**. Do not use PSMD for diagnosis, prognosis, monitoring or any other clinical routine use. Any application in clinical routine is forbidden by law, e.g. by Medical Device Regulation article 5 in the EU.
-
+> [!CAUTION]
+> PSMD is NOT a medical device and **for academic research use only**. Do not use PSMD for diagnosis, prognosis, monitoring or any other clinical routine use. Any application in clinical routine is forbidden by law, e.g. by Medical Device Regulation article 5 in the EU.
 
 ## Usage
 
-Download one of our [releases](https://github.com/miac-research/psmd/releases). For a new project, take the latest release. It is best practice to stick with one release version throughout a project.  
+**For detailed information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).**
 
-For even better replicability and traceability, we strongly recommend using a container for the software dependencies, e.g. the **[PSMD container recipe](https://github.com/miac-research/psmd/tree/main/container)** for Apptainer/Singularity.
+As of version 1.9.0, the preferred way of using PSMD is a [pre-built container image](https://github.com/orgs/miac-research/packages?repo_name=psmd), which can be used with Docker, Apptainer, and compatible container platforms. The usage is simple:
 
-For more information, please see the [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/) or type `./psmd.sh -h` at the command line.
+**Using Apptainer:**
 
+```shell
+# 1. Pull the container image and save as .sif file 
+apptainer build psmd.sif docker://ghcr.io/miac-research/psmd:latest
 
-## Contents of download packages
+# See available command line options:
+apptainer run psmd.sif -h
+```
 
-* `psmd.sh` - PSMD script
-* `skeleton_mask_2019.nii.gz` - Updated (2019) skeleton mask image
-* `LICENSE` - Please take a minute to read the license file
-* Folder `examples` - Sample dataset for testing
-* Folder `container` - Apptainer/Singularity container recipe
+**Using Docker**
 
+```shell
+# 1. Pull the container image into your local registry
+docker pull ghcr.io/miac-research/psmd:latest
+docker tag ghcr.io/miac-research/psmd:latest psmd:latest
+
+# For advanced usage, see available command line options:
+docker run --rm psmd:latest -h
+```
+
+**Local installation**
+
+Alternatively, you can download the PSMD script from the [releases page](https://github.com/miac-research/psmd/releases) and run it in your local environment.
+
+For a new project, take the latest release. It is best practice to **stick with one release version or – even better – the same container image** throughout a project.
 
 ## Version history
 
 Starting with version 1.6, all development is done in this GitHub repository. 
-See the [GitHub releases page](https://github.com/miac-research/psmd/releases) for the latest and previous releases. 
-
+See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/orgs/miac-research/packages?repo_name=psmd) for available pre-built container images.
 
 ## Roadmap of future development
 
 See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for current development topics. If you found a bug or have suggestions for new features, please feel free to open an issue.
 
-
 ## License
 
-The script itself is published under the BSD 3-clause license. Please see the `LICENSE` file provided in this repository.
+The PSMD script itself is published under the BSD 3-clause license. Please see the `LICENSE` file provided in this repository.
 
-An [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
-
+Please note that an [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
 
 ## Support
 
 The PSMD project was initiated at the Institue for Stroke and Dementia Research (ISD), Munich, Germany, with funding support by the LMU FöFoLe program (grant 808), the Else Kröner-Fresenius-Stiftung (EKFS, grant 2014_A200), and the Vascular Dementia Research Foundation.
 
-The ongoing development of PSMD is supported by Medical Image Analysis Center (MIAC), Basel, Switzerland.
+The ongoing development of PSMD is supported by Medical Image Analysis Center (MIAC AG), Basel, Switzerland.

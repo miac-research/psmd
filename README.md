@@ -21,7 +21,7 @@ apptainer build psmd.sif docker://ghcr.io/miac-research/psmd:latest
 apptainer run psmd.sif -h
 ```
 
-**Using Docker**
+**Using Docker**: 
 
 ```shell
 # 1. Pull the container image into your local registry
@@ -32,18 +32,14 @@ docker tag ghcr.io/miac-research/psmd:latest psmd:latest
 docker run --rm psmd:latest -h
 ```
 
-**Local installation**
+**Local installation (not recommended)**: Alternatively, you can download the PSMD script from the [releases page](https://github.com/miac-research/psmd/releases) and run it in your local environment.
 
-Alternatively, you can download the PSMD script from the [releases page](https://github.com/miac-research/psmd/releases) and run it in your local environment.
+> [!NOTE]  
+> For a new project, take the latest release. It is best practice to **stick with one release version or – even better – the same container image** throughout a project.
 
-For a new project, take the latest release. It is best practice to **stick with one release version or – even better – the same container image** throughout a project.
+## Version history and releases
 
-## Version history
-
-Starting with version 1.6, all development is done in this GitHub repository. 
-See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/orgs/miac-research/packages?repo_name=psmd) for available pre-built container images.
-
-## Roadmap of future development
+Starting with version 1.6, all development is done in this GitHub repository. See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/orgs/miac-research/packages?repo_name=psmd) for available pre-built container images.
 
 See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for current development topics. If you found a bug or have suggestions for new features, please feel free to open an issue.
 
@@ -51,7 +47,8 @@ See the [GitHub issues page](https://github.com/miac-research/psmd/issues) for c
 
 The PSMD script itself is published under the BSD 3-clause license. Please see the `LICENSE` file provided in this repository.
 
-Please note that an [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
+> [!IMPORTANT]  
+> Please note that an [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
 
 ## Support
 

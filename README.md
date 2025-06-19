@@ -1,4 +1,4 @@
-# PSMD (Peak width of Skeletonized Mean Diffusivity)
+TEST # PSMD (Peak width of Skeletonized Mean Diffusivity)
 
 PSMD is a robust, fully-automated and easy-to-implement marker for cerebral small vessel disease based on diffusion tensor imaging, white matter tract skeletonization (as implemented in FSL-TBSS) and histogram analysis.
 

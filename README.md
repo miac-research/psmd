@@ -7,9 +7,9 @@ PSMD is a robust, fully-automated and easy-to-implement marker for cerebral smal
 
 ## Usage
 
-**For detailed information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).**
+As of version 1.9.0, the preferred way of using PSMD is a [pre-built container image](https://github.com/miac-research/psmd/pkgs/container/psmd), which can be used with Docker, Apptainer, and compatible container platforms.
 
-As of version 1.9.0, the preferred way of using PSMD is a [pre-built container image](https://github.com/miac-research/psmd/pkgs/container/psmd), which can be used with Docker, Apptainer, and compatible container platforms. The usage is simple:
+The usage is simple. For more detailed information on usage, including FAQ, please visit [the PSMD Wiki](https://github.com/miac-research/psmd/wiki/).
 
 **Using Apptainer:**
 
@@ -32,22 +32,22 @@ docker tag ghcr.io/miac-research/psmd:latest psmd:latest
 docker run --rm psmd:latest -h
 ```
 
-**Local installation (not recommended)**: Alternatively, you can download the PSMD script from the [releases page](https://github.com/miac-research/psmd/releases) and run it in your local environment.
-
-> [!NOTE]  
-> For a new project, take the latest release. It is best practice to **stick with one release version or – even better – the same container image** throughout a project.
+**Local installation (not recommended)**: Alternatively, you can download the PSMD script from the [releases page](https://github.com/miac-research/psmd/releases) and run it in your local environment with all requried dependencies installed.
 
 ## Version history
 
 Starting with version 1.6, all development is done in this GitHub repository. 
 See the [releases page](https://github.com/miac-research/psmd/releases) for the version history and the [packages page](https://github.com/miac-research/psmd/pkgs/container/psmd) for available pre-built container images.
 
+> [!NOTE]  
+> For a new project, take the latest release. It is best practice to **stick with one release version or – even better – the same container image** throughout a project.
+
 ## License
 
 The PSMD script itself is published under the BSD 3-clause license. Please see the `LICENSE` file provided in this repository.
 
 > [!IMPORTANT]  
-> Please note that an [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD.
+> Please note that an [FSL license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence) is required to run PSMD, regardless of whether you are using the container or a local installation.
 
 ## Support
 
